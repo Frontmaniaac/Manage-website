@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Be Vietnam", sans-serif;
+}
+
+:root {
+  --brigtRed: hsl(12, 88%, 59%);
+  --darkBlue: hsl(228, 39%, 23%);
+  --paraLight: hsl(227, 12%, 61%);
+  --paraDark: hsl(233, 12%, 13%);
+  --paleRed: hsl(13, 100%, 96%);
+}
+
+body {
+  font-size: 16px;
+}
+/*# sourceMappingURL=style.css.map */
