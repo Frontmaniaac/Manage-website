@@ -248,10 +248,13 @@ body {
 .opinions {
   text-align: center;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  overflow-x: hidden;
   &__title {
     font-size: 36px;
+  }
+  &--btn {
+    margin: 3rem auto 1rem auto;
   }
 }
 .slider {
@@ -259,12 +262,39 @@ body {
   display: flex;
   text-align: center;
   margin: 4rem 0;
+  transition: 0.4s ease;
   &__item {
     min-width: 320px;
+    background: var(--paleRed);
+    padding: 0 2rem;
+    position: relative;
+
+    &--img {
+      position: absolute;
+      max-height: 80px;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     &--name {
       color: var(--darkBlue);
       font-weight: 700;
-      margin: 1.5rem 0;
+      margin: 4rem 0 1.5rem 0;
     }
   }
+}
+.sliderButtons {
+  display: flex;
+  margin: 0 auto;
+  &__circle {
+    height: 10px;
+    width: 10px;
+    border: 2px solid var(--brigtRed);
+    border-radius: 50%;
+    margin: 0 0.3rem;
+    transition: 0.2s;
+  }
+}
+.activeCircle {
+  background: var(--brigtRed);
 }
