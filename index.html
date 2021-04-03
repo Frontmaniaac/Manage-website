@@ -9,7 +9,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -23,82 +23,79 @@
       <header class="header">
         <img src="images/logo.svg" alt="manage" class="logo" />
         <nav class="navigation">
-          <a class="navigation link" href="#"> Pricing </a>
-          <a class="navigation link" href="#"> Product </a>
-          <a class="navigation link" href="#"> About Us </a>
-          <a class="navigation link" href="#"> Careers </a>
-          <a class="navigation link" href="#"> Community </a>
+          <a class="navigation__link" href="#"> Pricing </a>
+          <a class="navigation__link" href="#"> Product </a>
+          <a class="navigation__link" href="#"> About Us </a>
+          <a class="navigation__link" href="#"> Careers </a>
+          <a class="navigation__link" href="#"> Community </a>
         </nav>
         <a href="#" class="getStartedBtn" tabindex="0">Get Started</a>
         <div class="menuBtn">
-          <div class="menuBtn bar"></div>
-          <div class="menuBtn bar"></div>
-          <div class="menuBtn bar"></div>
+          <div class="menuBtn__bar"></div>
+          <div class="menuBtn__bar"></div>
+          <div class="menuBtn__bar"></div>
         </div>
       </header>
-      <section class="main welcome">
-        <div class="main welcome images">
-          <img
-            src="images/illustration-intro.svg"
-            class="images mainImg"
-            alt="Graphs"
-          />
-          <img
-            src="images/bg-simplify-section-mobile.svg"
-            alt="bg"
-            class="images bg"
-          />
-        </div>
-        <div class="main welcome textSec">
-          <h1 class="textSec title">
-            Bring everyone together to build better products.
-          </h1>
-          <p class="textSec para">
-            Manage makes it simple for software teams to plan day-to-day tasks
-            while keeping the larger team goals in view.
-          </p>
-          <a href="#" class="getStartedBtn" tabindex="0">Get Started</a>
-          <img
-            src="images/bg-simplify-section-mobile.svg"
-            class="textSec bgImage"
-            alt="bg2"
-          />
-        </div>
-      </section>
+      <div class="main__images">
+        <img
+          src="images/illustration-intro.svg"
+          class="main__images--graph"
+          alt="Graphs"
+        />
+        <div class="main__images--bg bgBlob"></div>
+      </div>
+      <div class="main__textSec">
+        <h1 class="main__textSec--title">
+          Bring everyone together to build better products.
+        </h1>
+        <p class="main__textSec--text">
+          Manage makes it simple for software teams to plan day-to-day tasks
+          while keeping the larger team goals in view.
+        </p>
+        <a href="#" class="main__textSec--btn getStartedBtn" tabindex="0"
+          >Get Started</a
+        >
+        <div class="main__textSec--bg bgBlob"></div>
+      </div>
     </main>
     <section class="about">
-      <div class="about different">
-        <h2 class="different title">
-          Get Started What’s different about Manage?
-        </h2>
-        <p class="different para">
+      <div class="about__main">
+        <h2 class="about__main--title">What’s different about Manage?</h2>
+        <p class="about__main--text">
           Manage provides all the functionality your team needs, without the
           complexity. Our software is tailor-made for modern digital product
           teams.
         </p>
       </div>
-      <div class="about list">
-        <div class="about list item">
-          <h3 class="item title"><span>01</span>Track company-wide progress</h3>
-          <p class="item para">
+      <div class="about__list">
+        <div class="about__list--item">
+          <h3 class="about__list--title">
+            <span class="about__list--title--number">01</span>Track company-wide
+            progress
+          </h3>
+          <p class="about__list--text">
             See how your day-to-day tasks fit into the wider vision. Go from
             tracking progress at the milestone level all the way done to the
             smallest of details. Never lose sight of the bigger picture again.
           </p>
         </div>
-        <div class="about list item">
-          <h3 class="item title"><span>02</span>Advanced built-in reports</h3>
-          <p class="item para">
+        <div class="about__list--item">
+          <h3 class="about__list--title">
+            <span class="about__list--title--number">02</span>Advanced built-in
+            reports
+          </h3>
+          <p class="about__list--text">
             Set internal delivery estimates and track progress toward company
             goals. Our customisable dashboard helps you build out the reports
             you need to keep key stakeholders informed.
           </p>
         </div>
-        <div class="about list item"></div>
-        <h3 class="item title">
-          <span>03</span>Everything you need in one place
+        <div class="about__list--item"></div>
+        <h3 class="about__list--title">
+          <span class="about__list--title--number">03</span>Everything you need
+          in one place
         </h3>
-        <p class="item para">
+        <p class="about__list--text">
           top jumping from one service to another to communicate, store files,
           track tasks and share documents. Manage offers an all-in-one team
           productivity solution.
