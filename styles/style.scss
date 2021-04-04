@@ -348,6 +348,8 @@ body {
   padding: 0 1rem;
   grid-template-rows: repeat(1fr, 5);
   justify-items: center;
+  justify-content: center;
+  align-items: center;
 
   @include breakpoint(laptop) {
     grid-template-columns: repeat(3, 1fr);
@@ -355,7 +357,7 @@ body {
     grid-template-areas:
       "logo navigation form"
       "socials navigation copyright";
-    padding: 2rem 4rem;
+    padding: 2rem;
   }
   &__form {
     display: flex;
@@ -384,6 +386,15 @@ body {
       max-width: 30px;
     }
   }
+  &__nav {
+    @include breakpoint(laptop) {
+      grid-area: navigation;
+      align-self: stretch;
+      justify-self: stretch;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -392,12 +403,6 @@ body {
     margin-top: 2rem;
     max-width: 500px;
 
-    @include breakpoint(laptop) {
-      grid-area: navigation;
-      align-self: stretch;
-      justify-self: stretch;
-      max-width: 300px;
-    }
     &--link {
       text-decoration: none;
       color: #fff;
@@ -413,12 +418,14 @@ body {
     opacity: 0.7;
     @include breakpoint(laptop) {
       grid-area: copyright;
+      margin: 0;
     }
   }
   &--logo {
     margin-top: 2rem;
     @include breakpoint(laptop) {
       grid-area: logo;
+      margin: 0;
     }
   }
 }
@@ -430,6 +437,9 @@ body {
   .fab {
     font-size: 32px;
     margin: 0 1rem;
+    @include breakpoint(laptop) {
+      font-size: 26px;
+    }
     &:hover {
       opacity: 0.7;
     }
