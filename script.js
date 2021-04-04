@@ -19,4 +19,25 @@ menuBtn.addEventListener("click",()=>{
         item.classList.toggle("menuBtn__bar--active")
     })
 })
+const inputEmail = document.querySelector(".footer__form--input")
+const mailformat = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2-8})?$/;
+const sendBtn = document.querySelector(".footer__form--btn")
+inputEmail.addEventListener("keyup", () => {
 
+    if (mailformat.test(inputEmail.value)) {
+        inputEmail.classList.add("valid")
+        inputEmail.classList.remove("invalid")
+    } else {
+        inputEmail.classList.add("invalid")
+        inputEmail.classList.remove("valid")
+    }
+})
+sendBtn.addEventListener("click", () => {
+    inputs.forEach(input => {
+        if (input.value.length <= 0) {
+            input.classList.add("invalid");
+        } else {
+            input.classList.add("valid");
+        }
+    })
+})
