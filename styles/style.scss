@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap");
+@import "mixins";
 * {
   padding: 0;
   margin: 0;
@@ -22,9 +23,17 @@ h2,
 h3 {
   color: var(--darkBlue);
   font-weight: 700;
+  @include breakpoint(tablet) {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
 p {
   color: var(--paraLight);
+  @include breakpoint(tablet) {
+    max-width: 550px;
+    margin: 0 auto;
+  }
 }
 body {
   font-size: 16px;
@@ -38,6 +47,7 @@ body {
   font-weight: 700;
   display: block;
   max-width: 90px;
+  max-height: 25px;
   &:hover {
     background: hsl(12, 88%, 53%);
   }
@@ -48,13 +58,79 @@ body {
 .header {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1.5rem 1.5rem 2rem 1.5rem;
   & .getStartedBtn {
     display: none;
+    @include breakpoint(laptop) {
+      display: flex;
+    }
   }
   & .nav {
-    display: none;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: rgba(50, 70, 136, 0.98);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+    transition: 0.4s;
+    @include breakpoint(laptop) {
+      position: relative;
+      height: 3vh;
+      background: #fff;
+    }
+    &--active {
+      top: 0;
+    }
+    &__list {
+      list-style: none;
+      font-size: 28px;
+
+      @include breakpoint(laptop) {
+        font-size: 20px;
+        display: flex;
+      }
+    }
+    &__item {
+      margin: 1rem 0;
+      position: relative;
+      padding-bottom: 0.3rem;
+      overflow-x: hidden;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        bottom: 0;
+        background: #fff;
+        height: 3px;
+        transition: 0.3s;
+        @include breakpoint(laptop) {
+          background: var(--darkBlue);
+          height: 2px;
+        }
+      }
+      &:hover::after {
+        left: 0;
+      }
+      @include breakpoint(laptop) {
+        margin: 0 0.6rem;
+      }
+    }
+    &__link {
+      color: #fff;
+      text-decoration: none;
+
+      @include breakpoint(laptop) {
+        color: var(--darkBlue);
+      }
+    }
   }
 }
 .menuBtn {
@@ -65,10 +141,31 @@ body {
   justify-content: space-between;
   flex-direction: column;
   cursor: pointer;
+  z-index: 11;
+  @include breakpoint(laptop) {
+    display: none;
+  }
+
   &__bar {
     width: 100%;
     height: 4px;
     background: var(--darkBlue);
+    transition: 0.3s;
+    &--active {
+      &:first-of-type {
+        transform-origin: 0% 0%;
+        transform: translateY(-3px) rotate(45deg);
+      }
+
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+
+      &:last-of-type {
+        transform: translateY(1px) rotate(-45deg);
+        transform-origin: 0% 100%;
+      }
+    }
   }
 }
 .bgBlob {
@@ -90,7 +187,18 @@ body {
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  &__container {
+    @include breakpoint(laptopL) {
+      margin-top: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
   &__images {
+    @include breakpoint(laptopL) {
+      order: 2;
+    }
     &--graph {
       max-width: 100vw;
     }
@@ -103,6 +211,11 @@ body {
   &__textSec {
     position: relative;
     text-align: center;
+    @include breakpoint(laptopL) {
+      text-align: left;
+      max-width: 500px;
+      margin-right: 3rem;
+    }
     &--bg {
       right: -55%;
       width: 200px;
@@ -110,25 +223,47 @@ body {
     &--title {
       font-size: 36px;
       line-height: 1.2;
+      @include breakpoint(laptopL) {
+        margin: 0;
+      }
     }
     &--text {
       margin: 1rem 0;
     }
     &--btn {
       margin: 2rem auto 4rem auto;
+      @include breakpoint(laptopL) {
+        margin: 2rem 0;
+      }
     }
   }
 }
 .about {
   padding: 0 1rem;
+  @include breakpoint(laptopL) {
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+  }
   &__main {
     text-align: center;
     padding: 2rem 1rem;
+    @include breakpoint(laptopL) {
+      text-align: left;
+      margin-right: 4rem;
+      max-width: 450px;
+    }
     &--title {
       font-size: 32px;
+      @include breakpoint(laptopL) {
+        margin: 0;
+      }
     }
     &--text {
       margin: 1rem 0 2rem 0;
+      @include breakpoint(tablet) {
+        margin: 1rem auto;
+      }
     }
   }
   &__list {
@@ -162,10 +297,17 @@ body {
   padding: 4rem 2rem;
   position: relative;
   margin-top: 2rem;
+  @include breakpoint(laptopL) {
+    display: flex;
+    text-align: left;
+  }
   &__title {
     font-size: 38px;
     color: #fff;
     font-weight: 700;
+    @include breakpoint(laptopL) {
+      max-width: 500px;
+    }
   }
   &__btn {
     color: var(--brigtRed);
@@ -188,9 +330,14 @@ body {
   background: var(--paraDark);
   color: #fff;
   padding: 0 1rem;
+  @include breakpoint(laptopL) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   &__form {
     display: flex;
     margin: 2rem 0;
+
     &--input {
       padding: 0.6rem 1rem;
       border-radius: 1.5rem;
@@ -217,6 +364,10 @@ body {
     list-style: none;
     justify-content: space-between;
     margin-top: 2rem;
+    @include breakpoint(tablet) {
+      max-width: 400px;
+      margin: 0 auto;
+    }
     &--link {
       text-decoration: none;
       color: #fff;
@@ -233,10 +384,16 @@ body {
   }
   &--logo {
     margin-top: 2rem;
+    @include breakpoint(laptopL) {
+      order: -1;
+    }
   }
 }
 .socials {
   margin: 2rem 0;
+  @include breakpoint(laptopL) {
+    order: 2;
+  }
   .fab {
     font-size: 32px;
     margin: 0 1rem;
@@ -252,9 +409,11 @@ body {
   overflow-x: hidden;
   &__title {
     font-size: 36px;
+    margin-bottom: 2rem;
   }
   &--btn {
     margin: 3rem auto 1rem auto;
+    min-width: 110px;
   }
 }
 .slider {
@@ -266,7 +425,7 @@ body {
   &__item {
     min-width: 320px;
     background: var(--paleRed);
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     position: relative;
 
     &--img {
@@ -293,6 +452,11 @@ body {
     border-radius: 50%;
     margin: 0 0.3rem;
     transition: 0.2s;
+    &:last-of-type {
+      @include breakpoint(tablet) {
+        display: none;
+      }
+    }
   }
 }
 .activeCircle {

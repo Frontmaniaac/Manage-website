@@ -10,4 +10,13 @@ sliderBtns.forEach((item,index)=>{
         sliderBtns[index].classList.add("activeCircle")
     })
 })
+const menuBars=document.querySelectorAll(".menuBtn__bar")
+const menuBtn = document.querySelector(".menuBtn")
+const navbar=document.querySelector(".nav")
+menuBtn.addEventListener("click",()=>{
+    navbar.classList.toggle("nav--active")
+    menuBars.forEach((item)=>{
+        item.classList.toggle("menuBtn__bar--active")
+    })
+})
 
