@@ -531,6 +531,10 @@ body {
   }
 }
 
+.wrap {
+  overflow-x: scroll;
+}
+
 .slider {
   position: relative;
   display: flex;
@@ -547,7 +551,6 @@ body {
 @media (min-width: 1024px) {
   .slider__item {
     min-width: 250px;
-    margin: 0 0.5rem;
   }
 }
 @media (min-width: 1440px) {

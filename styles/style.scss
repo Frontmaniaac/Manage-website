@@ -463,7 +463,11 @@ body {
     }
   }
 }
+.wrap{
+  overflow-x: scroll;
+}
 .slider {
+ 
   position: relative;
   display: flex;
   text-align: center;
@@ -474,9 +478,10 @@ body {
     background: rgb(245, 244, 244);
     padding: 1rem 2rem;
     position: relative;
+    
     @include breakpoint(laptop) {
       min-width: 250px;
-      margin: 0 0.5rem;
+
     }
     @include breakpoint(laptopL) {
       padding: 1rem;
