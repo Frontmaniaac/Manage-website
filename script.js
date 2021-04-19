@@ -67,7 +67,8 @@ sendBtn.addEventListener("click", () => {
 
 // CHECK IF ELEMENT IS INSIDE VIEWPORT
 var bounding = [];
-slider.addEventListener("scroll", () => {
+const sliderWrap = document.querySelector(".sliderWrap");
+sliderWrap.addEventListener("scroll", () => {
   sliderItems.forEach((item, i) => {
     bounding[i] = item.getBoundingClientRect();
 

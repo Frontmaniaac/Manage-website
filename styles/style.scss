@@ -463,14 +463,10 @@ body {
     }
   }
 }
-
-.slider {
+.sliderWrap{
   position: relative;
-  display: flex;
-  text-align: center;
-  margin: 4rem 0;
-  transition: 0.4s ease;
   overflow-x: scroll;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
   scrollbar-width: none; //FIREFOX
   @include breakpoint(laptopL) {
@@ -479,6 +475,15 @@ body {
   &::-webkit-scrollbar{
     display: none; //SAFARI/CHROME
   }
+}
+.slider {
+  position: relative;
+  display: flex;
+  text-align: center;
+  margin: 4rem 0;
+  transition: 0.4s ease;
+
+
   &__item {
     min-width: 320px;
     background: rgb(245, 244, 244);
@@ -499,8 +504,9 @@ body {
       position: absolute;
       max-height: 80px;
       top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
+      right: 0;
+      left: 0;  
+      margin: 0 auto;
     }
     &--name {
       color: var(--darkBlue);
