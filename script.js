@@ -2,26 +2,26 @@
 const sliderItems = document.querySelectorAll(".slider__item");
 const sliderBtns = document.querySelectorAll(".sliderButtons__circle");
 const slider = document.querySelector(".slider");
-sliderBtns.forEach((item, index) => {
-  item.addEventListener("click", () => {
-    sliderBtns.forEach((item, index) => {
-      sliderBtns[index].classList.remove("activeCircle");
-    });
-    if (
-      document.body.clientWidth > 480 &&
-      sliderBtns.length == 4 &&
-      index == 3
-    ) {
-      slider.style.transform =
-        "translateX(" + (-sliderItems[index].clientWidth + 40) * index + "px)";
-    } else {
-      slider.style.transform =
-        "translateX(" + -sliderItems[index].clientWidth * index + "px)";
-    }
+// sliderBtns.forEach((item, index) => {
+//   item.addEventListener("click", () => {
+//     sliderBtns.forEach((item, index) => {
+//       sliderBtns[index].classList.remove("activeCircle");
+//     });
+//     if (
+//       document.body.clientWidth > 480 &&
+//       sliderBtns.length == 4 &&
+//       index == 3
+//     ) {
+//       slider.style.transform =
+//         "translateX(" + (-sliderItems[index].clientWidth + 40) * index + "px)";
+//     } else {
+//       slider.style.transform =
+//         "translateX(" + -sliderItems[index].clientWidth * index + "px)";
+//     }
 
-    sliderBtns[index].classList.add("activeCircle");
-  });
-});
+//     sliderBtns[index].classList.add("activeCircle");
+//   });
+// });
 // let index = 1;
 // if (document.body.clientWidth < 600)
 //   setInterval(() => {

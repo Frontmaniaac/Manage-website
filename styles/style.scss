@@ -473,6 +473,9 @@ body {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scrollbar-width: none; //FIREFOX
+  @include breakpoint(laptopL) {
+    overflow-x: visible;
+  }
   &::-webkit-scrollbar{
     display: none; //SAFARI/CHROME
   }
@@ -510,7 +513,7 @@ body {
   display: flex;
   margin: 0 auto;
   cursor: pointer;
-  @include breakpoint(laptopL) {
+  @include breakpoint(laptop) {
     display: none;
   }
   &__circle {
@@ -522,11 +525,6 @@ body {
     transition: 0.2s;
     &:last-of-type {
       @include breakpoint(tablet) {
-        display: none;
-      }
-    }
-    &:nth-of-type(3) {
-      @include breakpoint(laptop) {
         display: none;
       }
     }

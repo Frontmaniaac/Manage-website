@@ -542,6 +542,11 @@ body {
       scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
+@media (min-width: 1440px) {
+  .slider {
+    overflow-x: visible;
+  }
+}
 .slider::-webkit-scrollbar {
   display: none;
 }
@@ -582,7 +587,7 @@ body {
   margin: 0 auto;
   cursor: pointer;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .sliderButtons {
     display: none;
   }
@@ -597,11 +602,6 @@ body {
 }
 @media (min-width: 768px) {
   .sliderButtons__circle:last-of-type {
-    display: none;
-  }
-}
-@media (min-width: 1024px) {
-  .sliderButtons__circle:nth-of-type(3) {
     display: none;
   }
 }
