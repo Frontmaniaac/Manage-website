@@ -537,12 +537,20 @@ body {
   text-align: center;
   margin: 4rem 0;
   transition: 0.4s ease;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.slider::-webkit-scrollbar {
+  display: none;
 }
 .slider__item {
   min-width: 320px;
   background: #f5f4f4;
   padding: 1rem 2rem;
   position: relative;
+  scroll-snap-align: start;
 }
 @media (min-width: 1024px) {
   .slider__item {

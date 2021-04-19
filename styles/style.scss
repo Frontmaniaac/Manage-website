@@ -470,15 +470,21 @@ body {
   text-align: center;
   margin: 4rem 0;
   transition: 0.4s ease;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; //FIREFOX
+  &::-webkit-scrollbar{
+    display: none; //SAFARI/CHROME
+  }
   &__item {
     min-width: 320px;
     background: rgb(245, 244, 244);
     padding: 1rem 2rem;
     position: relative;
+    scroll-snap-align: start;
     
     @include breakpoint(laptop) {
       min-width: 250px;
-
     }
     @include breakpoint(laptopL) {
       padding: 1rem;

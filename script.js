@@ -22,17 +22,17 @@ sliderBtns.forEach((item, index) => {
     sliderBtns[index].classList.add("activeCircle");
   });
 });
-let index = 1;
-if (document.body.clientWidth < 600)
-  setInterval(() => {
-    sliderBtns.forEach((item, index) => {
-      sliderBtns[index].classList.remove("activeCircle");
-    });
-    slider.style.transform =
-      "translateX(" + -sliderItems[1].clientWidth * index + "px)";
-    sliderBtns[index].classList.add("activeCircle");
-    index == sliderItems.length - 1 ? (index = 0) : index++;
-  }, 5000);
+// let index = 1;
+// if (document.body.clientWidth < 600)
+//   setInterval(() => {
+//     sliderBtns.forEach((item, index) => {
+//       sliderBtns[index].classList.remove("activeCircle");
+//     });
+//     slider.style.transform =
+//       "translateX(" + -sliderItems[1].clientWidth * index + "px)";
+//     sliderBtns[index].classList.add("activeCircle");
+//     index == sliderItems.length - 1 ? (index = 0) : index++;
+//   }, 5000);
 //MENU
 const menuBars = document.querySelectorAll(".menuBtn__bar");
 const menuBtn = document.querySelector(".menuBtn");
@@ -61,6 +61,23 @@ sendBtn.addEventListener("click", () => {
       input.classList.add("invalid");
     } else {
       input.classList.add("valid");
+    }
+  });
+});
+
+// CHECK IF ELEMENT IS INSIDE VIEWPORT
+var bounding = [];
+slider.addEventListener("scroll", () => {
+  sliderItems.forEach((item, i) => {
+    bounding[i] = item.getBoundingClientRect();
+
+    if (
+      bounding[i].left >= -100 &&
+      bounding[i].right <= window.innerWidth + 100
+    ) {
+      sliderBtns[i].classList.add("activeCircle");
+    } else {
+      sliderBtns[i].classList.remove("activeCircle");
     }
   });
 });
